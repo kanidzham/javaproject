@@ -32,6 +32,10 @@ public class OpenQuestionCard {
         return id;
     }
 
+    public String getExpectedAnswer() {
+        return expectedAnswer;
+    }
+
     @Override
     public String toString() {
         return "OpenQuestionCard{" +
