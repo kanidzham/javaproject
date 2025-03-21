@@ -12,7 +12,7 @@ class OpenQuestionCardTest {
 
     @BeforeEach
     void setUp() {
-        card = new OpenQuestionCard("Какой цвет у неба?", "Голубой");
+        card = new OpenQuestionCard(1L,"Какой цвет у неба?", "Голубой");
     }
 
     @Test
@@ -50,7 +50,7 @@ class OpenQuestionCardTest {
     @DisplayName("Проверка исключения при пустом вопросе")
     void testExceptionForEmptyQuestion() {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
-                () -> new OpenQuestionCard("", "Ответ"));
+                () -> new OpenQuestionCard(1L,"", "Ответ"));
         assertEquals("question не может быть пустым", exception.getMessage());
     }
 
@@ -58,7 +58,7 @@ class OpenQuestionCardTest {
     @DisplayName("Проверка исключения при пустом ответе")
     void testExceptionForEmptyAnswer() {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
-                () -> new OpenQuestionCard("Вопрос", ""));
+                () -> new OpenQuestionCard(1L,"Вопрос", ""));
         assertEquals("expectedAnswer не может быть пустым", exception.getMessage());
     }
 
@@ -66,7 +66,7 @@ class OpenQuestionCardTest {
     @DisplayName("Проверка исключения при null в вопросе")
     void testExceptionForNullQuestion() {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
-                () -> new OpenQuestionCard(null, "Ответ"));
+                () -> new OpenQuestionCard(1L,null, "Ответ"));
         assertEquals("question не может быть пустым", exception.getMessage());
     }
 
@@ -74,7 +74,7 @@ class OpenQuestionCardTest {
     @DisplayName("Проверка исключения при null в ответе")
     void testExceptionForNullAnswer() {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
-                () -> new OpenQuestionCard("Вопрос", null));
+                () -> new OpenQuestionCard(1L,"Вопрос", null));
         assertEquals("expectedAnswer не может быть пустым", exception.getMessage());
     }
 }
