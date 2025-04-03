@@ -18,7 +18,7 @@
         </dependency>
         <dependency>
             <groupId>ru.kani</groupId>
-            <artifactId>trainer_db_spring_jdbc</artifactId>
+            <artifactId>trainer_http_client</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
